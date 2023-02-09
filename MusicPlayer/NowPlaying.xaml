@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MusicPlayer.NowPlaying"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicPlayer"
+             mc:Ignorable="d" Height="284" Width="662">
+    <Border Background="Gray" Margin="0,0,-7,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="339*"/>
+                <ColumnDefinition Width="331*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Background="White" x:Name="Title" HorizontalAlignment="Left" Margin="204,30,0,0" VerticalAlignment="Top" Width="262" Grid.Column="1" Height="35" Grid.ColumnSpan="2">Title</TextBlock>
+            <TextBlock Background="White" x:Name="Artist"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="262" Grid.Column="1" Height="36" Margin="204,150,0,0" Grid.ColumnSpan="2">Artist</TextBlock>
+            <TextBlock Background="White" x:Name="Album"  HorizontalAlignment="Left" Margin="204,90,0,0" VerticalAlignment="Top" Width="262" Grid.Column="1" Height="35" Grid.ColumnSpan="2">Album</TextBlock>
+            <TextBlock Background="White" x:Name="Year" HorizontalAlignment="Left" Margin="204,210,0,0" VerticalAlignment="Top" Width="262" Grid.Column="1" Height="35" Grid.ColumnSpan="2">Year</TextBlock>
+            <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Height="20" RenderTransformOrigin="0.463,1.827" Grid.Column="1" Margin="300,4,0,0" Grid.ColumnSpan="2">Now Playing</TextBlock>
+
+        </Grid>
+    </Border>
+</UserControl>

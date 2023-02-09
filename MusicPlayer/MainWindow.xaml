@@ -1,0 +1,58 @@
+﻿<Window x:Class="MusicPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicPlayer"
+        mc:Ignorable="d"
+        Title="Media Tagger" Height="741" Width="1143"
+        Background="Gold">
+    <Window.CommandBindings>
+        <CommandBinding Command="MediaCommands.Play"
+                        CanExecute="PlayCommand_CanExecute"
+                        Executed="PlayCommand_Executed"/>
+        <CommandBinding Command="MediaCommands.Pause"
+                        CanExecute="PauseCommand_CanExecute"
+                        Executed="PauseCommand_Executed"/>
+        <CommandBinding Command="MediaCommands.Stop"
+                        CanExecute="StopCommand_CanExecute"
+                        Executed="StopCommand_Executed"/>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="159*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="OpenFile" Content="File" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="75" Click="FileOpen_Click" Height="38" Grid.Column="1" />
+        <Button x:Name="EditFile" Content="Edit" HorizontalAlignment="Left" Margin="3,66,0,0" VerticalAlignment="Top" Width="75" Click="EditFile_Click_1"  Height="38" IsEnabled="false" Grid.Column="1"/>
+        <DockPanel x:Name="UCE_Panel" Margin="0,10,211,436" Grid.Column="1" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Width="722">
+            <DockPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DockPanel.RenderTransform>
+        </DockPanel>
+        <DockPanel x:Name="UC_Panel" Margin="0,294,211,132" Grid.Column="1" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Width="722">
+            <DockPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DockPanel.RenderTransform>
+        </DockPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,608,397,19" HorizontalAlignment="Right" Width="350" Grid.Column="1">
+            <Label x:Name="lblStatus" Content="00:00 / 00:00" Height="30" Margin="10,0,10,0"/>
+            <Button Command="MediaCommands.Play" Height="32" Margin="10,0,10,0" Content="Play" Width="49"/>
+            <Button Command="MediaCommands.Pause" Height="31" Margin="10,0,10,0" Content="Pause" Width="49"/>
+            <Button Command="MediaCommands.Stop" Height="32" Margin="10,0,10,0" Content="Stop" Width="49"/>
+        </StackPanel>
+        <Button x:Name="SaveFile" Content="Save" Click="SaveFile_Click"  HorizontalAlignment="Left" Margin="3,123,0,0" VerticalAlignment="Top" Width="75"  Height="38" IsEnabled="false" Grid.Column="1"/>
+
+    </Grid>
+</Window>
